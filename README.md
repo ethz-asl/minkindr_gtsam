@@ -1,4 +1,4 @@
-Transformations simple. A minimal library for transformations, following the kindr interface. Uses active quaternions of rotation in Hamilton notation.
+This repository is intended to deliver the necessary glue code to allow gtsam to treat minkindr objects as gtsam values
 
 Licensed under the 3-clause BSD license ("New BSD").
 
