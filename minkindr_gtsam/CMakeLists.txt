@@ -20,7 +20,7 @@ cs_add_library(${PROJECT_NAME}
 
 # add_definitions(-DGTEST_USE_OWN_TR1_TUPLE=0)
 catkin_add_gtest(${PROJECT_NAME}_tests test/test_minkindr-gtsam.cc)
-target_link_libraries(${PROJECT_NAME}_tests ${PROJECT_NAME} pthread)
+target_link_libraries(${PROJECT_NAME}_tests ${PROJECT_NAME})
 
 cs_install()
 cs_export()

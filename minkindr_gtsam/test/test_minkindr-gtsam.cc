@@ -770,7 +770,7 @@ TEST(MinkindrGtsamTests, testCubicHermiteTranslationDerivative) {
   const double fd_step = 1e-9;
   const double tolerance = 1e-6;
 
-  {
+  { // Check the interpolation very close to one pose.
     EVector3 interpTrans = kindr::minimal::hermiteInterpolation<Vector3>(tA, vA, tB, vB, 1e-5, 1);
     EVector3 interpV = kindr::minimal::hermiteInterpolationDerivative<Vector3>(tA, vA, tB, vB, 1e-5, 1);
 
