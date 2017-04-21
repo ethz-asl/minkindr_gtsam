@@ -50,11 +50,20 @@ template<> struct traits<kindr::minimal::QuatTransformation> {
     if(str.size() > 0) { std::cout << str << ":\n";}
     std::cout << T.getTransformationMatrix() << std::endl;
   }
+  
+  static void Print(const kindr::minimal::QuatTransformation& T) {
+    Print(T, "");      
+  }
 
   // Check the equality of two values.
   static bool Equals(const kindr::minimal::QuatTransformation& T1,
                      const kindr::minimal::QuatTransformation& T2, double tol) {
     return (T1.getTransformationMatrix() - T2.getTransformationMatrix()).array().abs().maxCoeff() < tol;
+  }
+  
+  static bool Equals(const kindr::minimal::QuatTransformation& T1,
+                     const kindr::minimal::QuatTransformation& T2) {
+    return Equals(T1, T2, 0.0);
   }
 
   static vector Local(const type& origin, const type& other) {
