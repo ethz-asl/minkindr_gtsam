@@ -59,6 +59,11 @@ template<> struct traits<kindr::minimal::RotationQuaternion> {
     return (q1.getUnique().vector() - q2.getUnique().vector()).array()
         .abs().maxCoeff() < tol;
   }
+  
+  static bool Equals(const kindr::minimal::RotationQuaternion& q1,
+                     const kindr::minimal::RotationQuaternion& q2) {
+    return Equals(q1, q2, 1.0e-6);
+  }
 
   static vector Local(const type& origin, const type& other) {
     return (other * origin.inverse()).log();
