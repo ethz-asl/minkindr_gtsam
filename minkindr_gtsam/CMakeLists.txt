@@ -4,6 +4,8 @@ project(minkindr_gtsam)
 find_package(catkin_simple REQUIRED)
 catkin_simple(ALL_DEPS_REQUIRED)
 
+include_directories(${GTSAM_INCLUDE_DIR})
+
 cs_add_library(${PROJECT_NAME}
 	src/rotation-quaternion-gtsam.cc
 	src/quat-transformation-gtsam.cc
